@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập DOM</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./img/icon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.min.css">
+</head>
+
+<body>
+    <div class="container py-5">
+
+        <div class="card w-75 mx-auto">
+            <div class="bg-holder d-none d-lg-block bg-card"></div>
+            <div class="card-body position-relative p-0">
+                <div class="row p-0">
+                    <div class="col-12 col-md-4 col-lg-3 col-xl-2 nav-tabs nav flex-md-column nav-pills"
+                        id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <button class="nav-link btn-tabs mb-2 active " id="v-pills-home-tab" data-bs-toggle="pill"
+                            data-bs-target="#bai1" type="button" role="tab" aria-controls="v-pills-home"
+                            aria-selected="true">Bài 1</button>
+                        <button class="nav-link btn-tabs mb-2" id="v-pills-profile-tab" data-bs-toggle="pill"
+                            data-bs-target="#bai2" type="button" role="tab" aria-controls="v-pills-profile"
+                            aria-selected="false">Bài 2</button>
+                        <button class="nav-link btn-tabs mb-2" id="v-pills-profile-tab" data-bs-toggle="pill"
+                            data-bs-target="#bai3" type="button" role="tab" aria-controls="v-pills-profile"
+                            aria-selected="false">Bài 3</button>
+                        <button class="nav-link btn-tabs mb-2" id="v-pills-profile-tab" data-bs-toggle="pill"
+                            data-bs-target="#bai4" type="button" role="tab" aria-controls="v-pills-profile"
+                            aria-selected="false">Bài 4</button>
+                        <button class="nav-link btn-tabs mb-2" id="v-pills-profile-tab" data-bs-toggle="pill"
+                            data-bs-target="#bai5" type="button" role="tab" aria-controls="v-pills-profile"
+                            aria-selected="false">Bài 5</button>
+                    </div>
+
+                    <div class="col-12 col-md-8 col-lg-9 col-xl-10 tab-content" id="v-pills-tabContent">
+                        <div class="callout callout-warning">
+                            <p class="mb-0">❗ <b>Đây chỉ là gợi ý nên người làm có thể làm khác gợi ý, miễn đúng theo
+                                    yêu cầu trong file đề bài</b> </p>
+                        </div>
+                        <!-- Bài 1 -->
+                        <div class="tab-pane fade show active" id="bai1" role="tabpanel"
+                            aria-labelledby="v-pills-home-tab">
+                            <h4 class="card--heading">Đếm số lần xuất hiện của 1 từ</h4>
+                            <div class="callout callout-info">
+                                <ul>
+                                    <li>Để đảm bảo việc đếm từ không phân biệt chữ hoa và chữ thường, hãy chuyển toàn bộ
+                                        chuỗi về dạng chữ thường bằng phương thức toLowerCase.</li>
+                                    <li>Sử dụng phương thức split với biểu thức chính quy (regex) /\W+/ để tách chuỗi
+                                        thành mảng các từ. Biểu thức /\W+/ sẽ tách chuỗi tại các ký tự không phải là từ
+                                        (chữ cái, chữ số hoặc dấu gạch dưới).</li>
+                                    <li>Tạo một đối tượng rỗng wordCount để lưu số lần xuất hiện của mỗi từ.</li>
+                                    <li>Sử dụng vòng lặp để duyệt qua từng từ trong mảng.</li>
+                                    <li>Kiểm tra nếu từ không phải là chuỗi rỗng (điều này có thể xảy ra nếu có nhiều ký
+                                        tự phân cách liên tiếp).</li>
+                                    <li>Sau khi duyệt qua tất cả các từ, trả về đối tượng wordCount.</li>
+                                </ul>
+                                </p>
+
+                            </div>
+                            <form class="row gy-3 align-items-center px-2">
+                                <div class="col-12 col-lg-4">
+                                    <input type="text" class="form-control form__input" id="inputTextBai1"
+                                        placeholder="Nhập vào 1 chuỗi">
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn--primary me-1 mb-1" type="button" id="btnCount">Đếm</button>
+                                </div>
+                                <div class="alert alert-success" role="alert">
+                                    👉<span id="txtCountWords"></span>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Bài 2 -->
+                        <div class="tab-pane fade" id="bai2" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                            <h4 class="card--heading">Đếm số lần xuất hiện của 1 giá trị trong 1 mảng
+                            </h4>
+                            <div class="callout callout-info">
+                                <p>💡<b>Gợi ý:</b>
+                                    <br>
+                                    Kiến thức áp dụng:
+                                <ul>
+                                    <li>Khởi tạo biến đếm: Tạo một biến count và đặt giá trị ban đầu là 0. Biến này sẽ
+                                        dùng để đếm số lần giá trị xuất hiện trong mảng.</li>
+                                    <li>Lặp qua các phần tử của mảng: Sử dụng vòng lặp for...of để duyệt qua từng phần
+                                        tử trong mảng.</li>
+                                    <li>Kiểm tra giá trị phần tử: Trong vòng lặp, kiểm tra xem phần tử hiện tại có bằng
+                                        với giá trị cần tìm không (element === value).</li>
+                                    <li>Tăng biến đếm: Nếu phần tử hiện tại bằng với giá trị cần tìm, tăng biến count
+                                        lên 1.</li>
+                                    <li>Trả về kết quả: Sau khi duyệt qua toàn bộ mảng, trả về giá trị của biến count,
+                                        là số lần giá trị cần tìm xuất hiện trong mảng.</li>
+                                </ul>
+                                </p>
+                            </div>
+                            <form class="row gy-3 align-items-center px-2 bai2">
+                                <div class="col-12 col-lg-4">
+                                    <input type="text" class="form-control form__input" id="inputArrBai2"
+                                        placeholder="Nhập mảng VD: [1,3,4,5,1,3]">
+                                </div>
+
+                                <div class="col-12 col-lg-4">
+                                    <input type="number" class="form-control form__input" id="inputNumBai2"
+                                        placeholder="Nhập số cần đếm VD: 1">
+                                </div>
+
+                                <div class="col-12">
+                                    <button class="btn btn--primary me-1 mb-1" type="button" id="btnCountBai2">Tính
+                                        trung
+                                        bình</button>
+                                </div>
+                                <div class="alert alert-success" role="alert">
+                                    👉 <span id="txtResultBai2">result: 2</span>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- bài 3 -->
+                        <div class="tab-pane fade" id="bai3" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                            <h4 class="card--heading">Tìm giá trị lớn nhất trong mảng</h4>
+                            <div class="callout callout-info">
+                                <p>💡<b>Gợi ý:</b>
+                                    <br>
+                                    Kiến thức áp dụng:
+                                <ul>
+                                    <li>Giả sử giá trị lớn nhất ban đầu là phần tử đầu tiên của mảng (arr[0]).</li>
+                                    <li>Sử dụng vòng lặp for để duyệt qua các phần tử của mảng bắt đầu từ phần tử thứ
+                                        hai (i = 1).</li>
+                                    <li>Trong mỗi lần lặp, so sánh phần tử hiện tại với giá trị lớn nhất hiện tại.
+                                        Nếu phần tử hiện tại lớn hơn giá trị lớn nhất hiện tại, cập nhật giá trị lớn
+                                        nhất hiện tại thành phần tử hiện tại.
+                                    </li>
+                                    <li>Sau khi duyệt qua tất cả các phần tử của mảng, giá trị lớn nhất sẽ được lưu trữ
+                                        trong biến "max". Trả về biến này.
+                                    </li>
+                                </ul>
+                                </p>
+
+                            </div>
+                            <form class="row gy-3 align-items-center px-2">
+                                <div class="col-12 col-lg-4">
+                                    <input type="text" class="form-control form__input" id="inputArrBai3"
+                                        placeholder="Nhập mảng VD: [1,2,3,4,5]">
+                                </div>
+
+                                <div class="col-12">
+                                    <button class="btn btn--primary me-1 mb-1" type="button" id="btnFindNum">Tìm phần
+                                        tử lớn nhất</button>
+                                </div>
+                                <div class="alert alert-success" role="alert">
+                                    👉 <span id="txtNumMax"></span>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- Bài 4 -->
+                        <div class="tab-pane fade" id="bai4" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                            <h4 class="card--heading">Viết hàm đảo ngược chuỗi</h4>
+                            <div class="callout callout-info">
+                                <p>💡<b>Gợi ý:</b>
+                                    <br>
+                                    Kiến thức áp dụng:
+                                <ul>
+                                    <li>Khởi tạo một biến reversed là một chuỗi rỗng để lưu trữ chuỗi đảo ngược.
+                                    </li>
+                                    <li>Sử dụng vòng lặp for để duyệt qua từng ký tự của chuỗi từ cuối đến đầu.</li>
+                                    <li>Ở mỗi bước của vòng lặp, thêm ký tự hiện tại vào biến reversed.</li>
+                                </ul>
+                                </p>
+
+                            </div>
+                            <form class="row gy-3 align-items-center px-2">
+                                <div class="col-12 col-lg-4">
+                                    <input type="text" class="form-control form__input" id="inputTextBai4"
+                                        placeholder="Nhập chuỗi">
+                                </div>
+
+                                <div class="col-12">
+                                    <button class="btn btn--primary me-1 mb-1" type="button" id="btnBai4">Chuyển</button>
+                                </div>
+                                <div class="alert alert-success" role="alert">
+                                    👉 <span id="txtResultBai4"></span>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Bài 5 -->
+                        <div class="tab-pane fade" id="bai5" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                            <h4 class="card--heading">Hoán đổi đơn vị tiền tệ(VND > USD)</h4>
+                            <div class="callout callout-info">
+                                <p>💡<b>Gợi ý:</b>
+                                    <br>
+                                    Kiến thức áp dụng:
+                                <ul>
+                                    <li>Viết hàm nhận vào hai tham số: amount (số tiền cần chuyển đổi) và exchangeRate (tỷ giá ngoại tệ).</li>
+                                    <li>Kiểm tra nếu amount hoặc exchangeRate nhỏ hơn hoặc bằng 0 thì ném ra một lỗi.
+                                    </li>
+                                    <li>Tính toán số tiền sau khi chuyển đổi bằng cách nhân amount với exchangeRate.
+                                    </li>
+                                    <li>Trả về số tiền đã được chuyển đổi.
+                                    </li>
+                                </ul>
+                                </p>
+
+                            </div>
+                            <form class="row gy-3 align-items-center px-2">
+                                <div class="col-12 col-lg-4">
+                                    <input type="number" class="form-control form__input" id="inputMonney"
+                                        placeholder="Nhập số tiền cần chuyển đổi">
+                                </div>
+                                <div class="col-12 col-lg-4">
+                                    <input type="number" class="form-control form__input" id="inputExchange"
+                                        placeholder="Nhập tỉ giá chuyển đổi">
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn--primary me-1 mb-1" type="button" id="btnExchange">Tính</button>
+                                </div>
+                                <div class="alert alert-success" role="alert">
+                                    👉 <span id="txtBai5"></span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+
+    <script src="./js/main.js"></script>
+    <script src="./js/main.min.js"></script>
+</body>
+
+</html>
